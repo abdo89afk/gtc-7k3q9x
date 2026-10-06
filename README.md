@@ -13,6 +13,8 @@ A 15-minute team game for a company event: a colleague's baby photo goes up on t
 
 Flow: **Lobby** (QR + teams joining) → press **Start** → each photo: 20 s timer, captains lock in → **Reveal** (scores) → **Next** … → **Finish** (podium).
 
+Auto-play is on by default: the photo is revealed when the timer ends (or as soon as every team has locked in), and the next photo follows after 3 seconds (adjustable on the host page; untick Auto-play to drive it by hand).
+
 Rules built in:
 - 10 points for a correct guess (the brothers round: 5 per correct name).
 - A team that contains the pictured person sits that round out (no points, no penalty).

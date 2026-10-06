@@ -214,3 +214,10 @@ body.timeup .timeup-msg { display: block; }
   .podium { grid-template-columns: repeat(3, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+.hauto { background: #fff; border-radius: var(--radius); padding: .7rem 1.2rem; margin: -0.4rem 0 1rem; display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; font-size: .95rem; }
+.hauto .chk { margin-left: 0; }
+.hauto .num { width: 3.4rem; padding: .25rem .4rem; border: 1.5px solid var(--paper-3); border-radius: 8px; text-align: center; }
+.muted.inline { margin-left: .6rem; }
+.revealbar { height: 6px; background: rgba(255,255,255,.12); border-radius: 3px; overflow: hidden; margin-top: 1.2rem; }
+.revealbar i { display: block; height: 100%; background: var(--marigold); transform-origin: left; transform: scaleX(1); }

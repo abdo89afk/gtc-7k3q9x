@@ -11,6 +11,7 @@ window.GAME_CONFIG = {
   },
 
   roundSeconds: 20,        // guessing time per photo
+  revealSeconds: 3,        // auto-play: how long the reveal stays up before the next photo
   graceMs: 1500,           // answers arriving this long after the timer still count (network lag)
   pointsPerRound: 10,      // points for a fully correct answer
   title: "Guess the Colleague",

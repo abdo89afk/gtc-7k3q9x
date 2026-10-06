@@ -9,6 +9,7 @@
 
   const CFG = window.GAME_CONFIG || {};
   const ROUND_MS = (CFG.roundSeconds || 20) * 1000;
+  const AUTO_REVEAL_SEC = CFG.revealSeconds || 3;
   const GRACE_MS = CFG.graceMs ?? 1500;
   const POINTS = CFG.pointsPerRound || 10;
   const TITLE = CFG.title || "Guess the Colleague";
@@ -22,7 +23,7 @@
     backend: null, uid: null, role: "captain",
     roster: [], rounds: [], byId: {},
     s: { game: null, teams: null, answers: null, results: null, hostUid: null },
-    ui: { search: "", createName: "", createMembers: new Set(), editing: false, confirmReset: false, confirmTeams: false, autoReveal: false, revealedFor: null },
+    ui: { search: "", createName: "", createMembers: new Set(), editing: false, confirmReset: false, confirmTeams: false, revealedFor: null },
     unsubAnswers: null, answersRound: null, timerRaf: 0,
   };
 
@@ -174,7 +175,9 @@
       }
       case "release-host": { if (isHost()) await b.remove("config/hostUid"); return; }
       case "take-host": { await b.set("config/hostUid", App.uid); return; }
-      case "auto-reveal": App.ui.autoReveal = !App.ui.autoReveal; return render();
+      case "auto-toggle": return b.update("game/auto", { on: !auto().on });
+      case "auto-early": return b.update("game/auto", { early: !auto().early });
+      case "auto-sec": { const v = Math.max(1, Math.min(60, parseInt(el.value, 10) || AUTO_REVEAL_SEC)); return b.update("game/auto", { revealSec: v }); }
       case "fullscreen": { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen?.(); return; }
     }
   }
@@ -187,9 +190,11 @@
 
   function onClick(e) {
     const el = e.target.closest("[data-action]"); if (!el) return;
-    if (el.tagName === "FORM") return;
-    e.preventDefault(); act(el.dataset.action, el);
+    if (el.tagName === "FORM" || el.dataset.on === "change") return;
+    if (el.type !== "checkbox") e.preventDefault();
+    act(el.dataset.action, el);
   }
+  document.addEventListener("change", (e) => { const el = e.target; if (el.dataset.on === "change" && el.dataset.action) act(el.dataset.action, el); });
   function onInput(e) {
     const el = e.target; const k = el.dataset.bind; if (!k) return;
     if (k === "search") { App.ui.search = el.value; renderListOnly(); }
@@ -199,6 +204,23 @@
   function toast(msg) { let t = $("#toast"); if (!t) { t = document.createElement("div"); t.id = "toast"; document.body.appendChild(t); } t.textContent = msg; t.classList.add("show"); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), 2200); }
 
   // ---------- timer loop (no re-render, just DOM updates) ----------
+  // Auto-play settings live in game.auto so they survive a reload: {on, revealSec, early}
+  const auto = () => Object.assign({ on: true, revealSec: AUTO_REVEAL_SEC, early: true }, game().auto || {});
+  let autoRevealKey = "", autoNextKey = "";
+  function autoPlayTick(g, key) {
+    if (App.role !== "host" || !isHost()) return;
+    const a = auto(); if (!a.on) return;
+    if (g.phase === "round" && g.startedAt) {
+      const c = currentRound() ? answeredCount(currentRound()) : null;
+      const allIn = a.early && c && c.total > 0 && c.answered >= c.total && App.s.answers !== null;
+      if ((remainingMs() <= 0 || allIn) && autoRevealKey !== key) { autoRevealKey = key; reveal(); }
+    } else if (g.phase === "reveal" && g.revealedAt) {
+      const left = a.revealSec * 1000 - (App.backend.now() - g.revealedAt);
+      document.querySelectorAll("[data-nextin]").forEach((el) => { el.textContent = Math.max(0, Math.ceil(left / 1000)); });
+      const nk = "next:" + g.roundIdx + ":" + g.revealedAt;
+      if (left <= 0 && autoNextKey !== nk) { autoNextKey = nk; act("next"); }
+    }
+  }
   function startTimerLoop() {
     let lastSec = -1, lastPhaseKey = "";
     const tick = () => {
@@ -212,10 +234,15 @@
         document.querySelectorAll("[data-timer-ring]").forEach((el) => { el.style.strokeDashoffset = String(283 * (1 - ms / total)); el.classList.toggle("urgent", sec <= 5); });
         if (sec !== lastSec || key !== lastPhaseKey) {
           lastSec = sec;
-          if (ms <= 0 && !document.body.classList.contains("timeup")) { document.body.classList.add("timeup"); render(); if (App.role === "host" && App.ui.autoReveal && isHost()) reveal(); }
+          if (ms <= 0 && !document.body.classList.contains("timeup")) { document.body.classList.add("timeup"); render(); }
           if (ms > 0) document.body.classList.remove("timeup");
         }
+      } else if (g.phase === "reveal") {
+        document.body.classList.remove("timeup");
+        const a = auto(); const left = g.revealedAt ? a.revealSec * 1000 - (App.backend.now() - g.revealedAt) : 0;
+        document.querySelectorAll("[data-reveal-bar]").forEach((el) => { el.style.transform = `scaleX(${a.on && g.revealedAt ? Math.max(0, left) / (a.revealSec * 1000) : 0})`; });
       } else document.body.classList.remove("timeup");
+      autoPlayTick(g, key);
       lastPhaseKey = key;
       App.timerRaf = requestAnimationFrame(tick);
     };
@@ -394,11 +421,12 @@
   function scrReveal() {
     const g = game(), round = currentRound(); const st = standings().slice(0, 8);
     return `<div class="stage reveal">
-      <header class="stagebar"><span class="rnd">Photo ${g.roundIdx + 1} <small>of ${App.rounds.length}</small></span><span class="answered">It was…</span></header>
+      <header class="stagebar"><span class="rnd">Photo ${g.roundIdx + 1} <small>of ${App.rounds.length}</small></span><span class="answered">${auto().on ? `${(g.roundIdx + 1) < App.rounds.length ? "Next photo" : "Podium"} in <b data-nextin>${auto().revealSec}</b>` : "It was…"}</span></header>
       <div class="hero"><div class="pair">${pairHtml(round)}</div>
         <div class="ask"><h1 class="display name">${esc(names(round.people))}</h1><p class="role">${round.people.map((id) => esc(App.byId[id]?.dept || "")).filter(Boolean).join(" · ")}</p>
           <ol class="mini-standings">${st.map((s) => `<li>${avatar(s)}<span class="n">${esc(s.name)}</span><b>${s.points}</b></li>`).join("")}</ol></div></div>
       ${teamChips(round, true)}
+      <div class="revealbar"><i data-reveal-bar></i></div>
     </div>`;
   }
   function scrFinal() {
@@ -418,8 +446,8 @@
     const st = standings();
     const controls = {
       lobby: `<button class="btn primary big" data-action="start" ${dis} ${teamList().length ? "" : "disabled"}>Start game →</button><p class="muted">${teamList().length} team${teamList().length === 1 ? "" : "s"} ready. Photo 1 shows the moment you press start.</p>`,
-      round: `<button class="btn primary big ${timeUp() ? "pulse" : ""}" data-action="reveal" ${dis}>Reveal</button> <button class="btn" data-action="next" ${dis}>Skip photo</button> <label class="chk"><input type="checkbox" data-action="auto-reveal" ${App.ui.autoReveal ? "checked" : ""}> Reveal automatically when time's up</label>`,
-      reveal: `<button class="btn primary big" data-action="next" ${dis}>${(g.roundIdx + 1) < App.rounds.length ? "Next photo →" : "Finish: show podium 🏆"}</button> <button class="btn" data-action="replay" ${dis}>Replay this photo</button>`,
+      round: `<button class="btn primary big ${timeUp() ? "pulse" : ""}" data-action="reveal" ${dis}>Reveal now</button> <button class="btn" data-action="next" ${dis}>Skip photo</button>`,
+      reveal: `<button class="btn primary big" data-action="next" ${dis}>${(g.roundIdx + 1) < App.rounds.length ? "Next photo now →" : "Finish: show podium 🏆"}</button> <button class="btn" data-action="replay" ${dis}>Replay this photo</button>${auto().on ? ` <span class="muted inline">Next photo in <b data-nextin>${Math.max(0, Math.ceil((auto().revealSec * 1000 - (App.backend.now() - (g.revealedAt || 0))) / 1000))}</b>s</span>` : ""}`,
       final: `<button class="btn" data-action="to-lobby" ${dis}>Back to lobby screen</button>`,
     }[ph];
     const roundPanel = round ? `<div class="hround"><div class="print small">${photo(round.baby)}</div><div><b>Photo ${g.roundIdx + 1} of ${App.rounds.length}</b> — ${esc(names(round.people))}${round.hint ? ` <i>(${esc(round.hint)})</i>` : ""}<br>${ph === "round" ? `<span class="t"><b data-timer>${Math.ceil(remainingMs() / 1000)}</b>s left</span> · ${answeredCount(round).answered}/${answeredCount(round).total} answered` : "Revealed"}</div></div>` : "";
@@ -440,6 +468,7 @@
     return `<div class="host">
       <header class="hhead"><h1>${esc(TITLE)} — host</h1><span class="phase ${ph}">${ph}</span>${hostNote}</header>
       <section class="hcontrols">${controls}</section>
+      <section class="hauto"><label class="chk"><input type="checkbox" data-action="auto-toggle" ${auto().on ? "checked" : ""} ${dis}> <b>Auto-play</b>: reveal when time's up, then show the next photo after</label> <input class="num" type="number" min="1" max="60" value="${auto().revealSec}" data-action="auto-sec" data-on="change" ${dis}> s <label class="chk"><input type="checkbox" data-action="auto-early" ${auto().early ? "checked" : ""} ${dis}> reveal early once every team has locked in</label></section>
       ${roundPanel}
       <section><h2>Teams</h2><table class="hteams"><thead><tr><th>Team</th><th>${ph === "lobby" ? "" : "Answer"}</th><th>Score</th><th></th></tr></thead><tbody>${teamRows || `<tr><td colspan="4" class="muted">No teams yet. The screen page shows the QR code: <a href="#screen" target="_blank">open the screen ↗</a></td></tr>`}</tbody></table></section>
       <section><h2>Photos</h2><ol class="hrounds">${App.rounds.map((r, i) => `<li class="${i === g.roundIdx && round ? "cur" : ""} ${results()[r.id] ? "done" : ""}">${photo(r.baby, "thumb")}<span>${esc(names(r.people))}</span></li>`).join("")}</ol></section>
