@@ -17,7 +17,7 @@ Flow: **Lobby** (QR + teams joining) → press **Start** → each photo: 20 s ti
 
 Rules built in:
 - 10 points for a correct guess (the brothers round: 5 per correct name).
-- A team that contains the pictured person sits that round out (no points, no penalty).
+- Every team guesses every photo, including the team of the pictured person.
 - Ties are broken by total answer time.
 - Answers that arrive after the timer (+1.5 s grace) don't count. Host can mark any team correct/wrong at reveal.
 - Everything lives on the server, so a phone refresh just resumes.

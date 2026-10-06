@@ -81,7 +81,8 @@
   const memberIds = (t) => Object.keys(t?.members || {});
   const picturedIds = () => new Set(App.rounds.flatMap((r) => r.people));
   const takenBy = () => { const m = {}; for (const t of teamList()) for (const id of memberIds(t)) m[id] = t; return m; };
-  function sitsOut(team, round) { return round.people.some((p) => team.members && team.members[p]); }
+  // Everyone guesses every photo, including the team of the pictured person (rule removed on request).
+  function sitsOut(team, round) { return false; }
   function remainingMs() { const g = game(); if (g.phase !== "round" || !g.startedAt) return 0; return Math.max(0, (g.duration || ROUND_MS) - (App.backend.now() - g.startedAt)); }
   const timeUp = () => phase() === "round" && remainingMs() <= 0;
 
@@ -412,7 +413,7 @@
     return `<div class="lobby">
       <div class="lobby-l"><h1 class="display title">${esc(TITLE)}</h1><p class="lead">Captains: scan to make your team</p><div id="qr" class="qr"></div><p class="url">${esc(joinUrl().replace(/^https?:\/\//, ""))}</p></div>
       <div class="lobby-r"><h2>Teams <span class="count">${ts.length}</span></h2>
-        ${ts.length ? `<ul class="teamlist">${ts.map((t) => { const n = memberIds(t).length, p = memberIds(t).filter((id) => pic.has(id)).length; return `<li>${avatar(t, "lg")}<b>${esc(t.name)}</b><small>${n} ${n === 1 ? "person" : "people"}${p ? ` · ${p} in the photos` : ""}</small></li>`; }).join("")}</ul>` : `<p class="muted">No teams yet. Scan the code to be the first.</p>`}
+        ${ts.length ? `<ul class="teamlist">${ts.map((t) => { const n = memberIds(t).length, p = memberIds(t).filter((id) => pic.has(id)).length; return `<li>${avatar(t, "lg")}<b>${esc(t.name)}</b><small>${n} ${n === 1 ? "person" : "people"}</small></li>`; }).join("")}</ul>` : `<p class="muted">No teams yet. Scan the code to be the first.</p>`}
       </div></div>
       ${isHost() ? `<div class="scr-host"><button class="btn primary big" data-action="start" ${ts.length ? "" : "disabled"}>Start the game</button><small>Then it runs by itself: ${CFG.roundSeconds || 20} s per photo, reveal, next. Space = start / reveal / next · F = full screen</small></div>` : ""}`;
   }
