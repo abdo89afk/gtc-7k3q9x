@@ -7,6 +7,7 @@
 (function () {
   "use strict";
 
+  const APP_VERSION = 8; // keep in sync with ?v= in index.html (bumped on every upload)
   const CFG = window.GAME_CONFIG || {};
   const ROUND_MS = (CFG.roundSeconds || 20) * 1000;
   const AUTO_REVEAL_SEC = CFG.revealSeconds || 3;
@@ -27,8 +28,25 @@
     unsubAnswers: null, answersRound: null, timerRaf: 0,
   };
 
+  // ---------- self-update: if a newer version is live, refresh once ----------
+  async function checkForUpdate() {
+    try {
+      const html = await fetch("index.html?u=" + Date.now(), { cache: "no-store" }).then((r) => r.text());
+      const live = parseInt((html.match(/app\.js\?v=(\d+)/) || [])[1], 10);
+      if (!live || live === APP_VERSION) return false;
+      const tried = sessionStorage.getItem("gtc-updated-to");
+      if (tried === String(live)) return false; // already tried once this session: don't loop
+      sessionStorage.setItem("gtc-updated-to", String(live));
+      await Promise.all(["index.html", location.pathname].map((u) => fetch(u, { cache: "reload" }).catch(() => {})));
+      location.reload();
+      return true;
+    } catch { return false; }
+  }
+
   // ---------- boot ----------
   async function boot() {
+    if (await checkForUpdate()) return;
+    setInterval(() => { if (phase() === "lobby" || phase() === "final") checkForUpdate(); }, 60000);
     const h = location.hash.replace("#", "").split("=")[0];
     App.role = ["screen", "host", "watch"].includes(h) ? h : "captain";
     document.body.dataset.role = App.role;
@@ -147,7 +165,7 @@
       // host
       case "start": {
         if (!App.rounds.length) return;
-        await b.set("game", { phase: "round", roundIdx: 0, startedAt: b.TS, duration: ROUND_MS, startedGameAt: b.TS });
+        await b.set("game", { phase: "round", roundIdx: 0, startedAt: b.TS, duration: ROUND_MS, startedGameAt: b.TS, auto: g.auto || null });
         return;
       }
       case "reveal": return reveal();
@@ -162,10 +180,10 @@
       case "to-lobby": return b.update("game", { phase: "lobby" });
       case "reset-ask": App.ui.confirmReset = true; return render();
       case "reset-cancel": App.ui.confirmReset = false; return render();
-      case "reset": { App.ui.confirmReset = false; await b.remove("answers"); await b.remove("results"); await b.set("game", { phase: "lobby" }); return; }
+      case "reset": { App.ui.confirmReset = false; await b.remove("answers"); await b.remove("results"); await b.set("game", { phase: "lobby", auto: g.auto || null }); return; }
       case "teams-ask": App.ui.confirmTeams = true; return render();
       case "teams-cancel": App.ui.confirmTeams = false; return render();
-      case "teams-clear": { App.ui.confirmTeams = false; await b.remove("teams"); await b.remove("answers"); await b.remove("results"); await b.set("game", { phase: "lobby" }); return; }
+      case "teams-clear": { App.ui.confirmTeams = false; await b.remove("teams"); await b.remove("answers"); await b.remove("results"); await b.set("game", { phase: "lobby", auto: g.auto || null }); return; }
       case "remove-team": return b.remove("teams/" + d.uid);
       case "override": {
         const round = currentRound(); if (!round) return;
@@ -483,7 +501,7 @@
       ${roundPanel}
       <section><h2>Teams</h2><table class="hteams"><thead><tr><th>Team</th><th>${ph === "lobby" ? "" : "Answer"}</th><th>Score</th><th></th></tr></thead><tbody>${teamRows || `<tr><td colspan="4" class="muted">No teams yet. The screen page shows the QR code: <a href="#screen" target="_blank">open the screen ↗</a></td></tr>`}</tbody></table></section>
       <section><h2>Photos</h2><ol class="hrounds">${App.rounds.map((r, i) => `<li class="${i === g.roundIdx && round ? "cur" : ""} ${results()[r.id] ? "done" : ""}">${photo(r.baby, "thumb")}<span>${esc(names(r.people))}</span></li>`).join("")}</ol></section>
-      <section class="hfoot"><a class="btn small" href="#screen" target="_blank">Open the big screen ↗</a> <a class="btn small" href="${esc(joinUrl())}" target="_blank">Open captain page ↗</a> ${confirmReset} ${confirmTeams} ${host ? `<button class="btn small" data-action="release-host">Release host</button>` : ""}<p class="muted">Host device id: ${esc(App.uid)}</p></section>
+      <section class="hfoot"><a class="btn small" href="#screen" target="_blank">Open the big screen ↗</a> <a class="btn small" href="${esc(joinUrl())}" target="_blank">Open captain page ↗</a> ${confirmReset} ${confirmTeams} ${host ? `<button class="btn small" data-action="release-host">Release host</button>` : ""}<p class="muted">Version ${APP_VERSION} · ${CFG.roundSeconds || 20} s per photo · host device id: ${esc(App.uid)}</p></section>
     </div>`;
   }
 
