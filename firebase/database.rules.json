@@ -1,0 +1,44 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "config": {
+      "hostUid": {
+        ".read": true,
+        ".write": "auth != null && (!data.exists() || data.val() === auth.uid)",
+        ".validate": "newData.isString()"
+      }
+    },
+
+    "game": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === root.child('config/hostUid').val()"
+    },
+
+    "results": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === root.child('config/hostUid').val()"
+    },
+
+    "teams": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === root.child('config/hostUid').val()",
+      "$uid": {
+        ".write": "auth != null && auth.uid === $uid",
+        ".validate": "newData.hasChildren(['name', 'members']) && newData.child('name').isString() && newData.child('name').val().length <= 40"
+      }
+    },
+
+    "answers": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === root.child('config/hostUid').val()",
+      "$roundId": {
+        "$uid": {
+          ".write": "auth != null && auth.uid === $uid && root.child('game/phase').val() === 'round'",
+          ".validate": "newData.hasChildren(['picks', 'at']) && newData.child('at').val() === now"
+        }
+      }
+    }
+  }
+}

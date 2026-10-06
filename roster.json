@@ -1,0 +1,1178 @@
+[
+{
+"id": "aaron-mackellow",
+"name": "Aaron Mackellow",
+"dept": "Sales",
+"place": "Spain - Andalusia"
+},
+{
+"id": "abd-allah-el-dardery",
+"name": "Abd-Allah El-Dardery",
+"dept": "Compliance Operations",
+"place": "Egypt"
+},
+{
+"id": "abdelrahman-fouda",
+"name": "Abdelrahman Fouda",
+"dept": "Compliance Operations",
+"place": "Egypt"
+},
+{
+"id": "abdulghffar-salama",
+"name": "Abdulghffar Salama",
+"dept": "Compliance Operations",
+"place": "Egypt"
+},
+{
+"id": "abdullah-magdi",
+"name": "Abdullah Magdi",
+"dept": "Compliance Operations",
+"place": "Netherlands"
+},
+{
+"id": "adam-elnaba",
+"name": "Adam Elnaba",
+"dept": "Sales",
+"place": "Egypt"
+},
+{
+"id": "adel-zaid",
+"name": "Adel Zaid",
+"dept": "Engineering",
+"place": "Egypt"
+},
+{
+"id": "adharsh-reghu",
+"name": "Adharsh Reghu",
+"dept": "Engineering",
+"place": "India"
+},
+{
+"id": "ahmed-demerdash",
+"name": "Ahmed Demerdash",
+"dept": "Product",
+"place": "Egypt"
+},
+{
+"id": "albana-selmani",
+"name": "Albana Selmani",
+"dept": "Customer Success & Support",
+"place": "Germany - Hamburg"
+},
+{
+"id": "albert-johnson",
+"name": "Albert Johnson",
+"dept": "Sales",
+"place": "Spain - Catalonia"
+},
+{
+"id": "alexandru-marcu",
+"name": "Alexandru Marcu",
+"dept": "Engineering",
+"place": "Romania"
+},
+{
+"id": "alicja-smyka",
+"name": "Alicja Smyka",
+"dept": "Sales",
+"place": "Spain - Catalonia"
+},
+{
+"id": "amr-khaled",
+"name": "Amr Khaled",
+"dept": "Engineering",
+"place": "Egypt"
+},
+{
+"id": "anas-abdi",
+"name": "Anas Abdi",
+"dept": "Customer Success & Support",
+"place": "Germany - Berlin"
+},
+{
+"id": "anatolii-aboian",
+"name": "Anatolii Aboian",
+"dept": "Engineering",
+"place": "Netherlands"
+},
+{
+"id": "andre-luis-peres",
+"name": "André Luis Peres",
+"dept": "Engineering",
+"place": "Brazil"
+},
+{
+"id": "andrei-giulvezan",
+"name": "Andrei Giulvezan",
+"dept": "Engineering",
+"place": "Romania"
+},
+{
+"id": "anica-borgloh",
+"name": "Anica Borgloh",
+"dept": "Sales",
+"place": "Denmark"
+},
+{
+"id": "anna-dung",
+"name": "Anna Dung",
+"dept": "Marketing",
+"place": "Germany - North Rhine-Westphalia"
+},
+{
+"id": "anna-luisa-grebe",
+"name": "Anna Luisa Grebe",
+"dept": "Co-founder",
+"place": "Germany - Bavaria"
+},
+{
+"id": "anna-scheck",
+"name": "Anna Scheck",
+"dept": "Customer Success & Support",
+"place": "Germany - Baden-Württemberg"
+},
+{
+"id": "anne-brandl",
+"name": "Anne Brandl",
+"dept": "Marketing",
+"place": "Spain - Catalonia"
+},
+{
+"id": "anneke-van-krevel",
+"name": "Anneke Van Krevel",
+"dept": "Sales",
+"place": null
+},
+{
+"id": "annette-weeber",
+"name": "Annette Weeber",
+"dept": "People and Finance",
+"place": "Portugal"
+},
+{
+"id": "anton-lissner",
+"name": "Anton Lissner",
+"dept": "",
+"place": "Germany - Brandenburg"
+},
+{
+"id": "anubhav-mendiratta",
+"name": "Anubhav Mendiratta",
+"dept": "Sales",
+"place": "India"
+},
+{
+"id": "arianit-serifi",
+"name": "Arianit Serifi",
+"dept": "Sales",
+"place": "Germany - Bavaria"
+},
+{
+"id": "axel-cornelius",
+"name": "Axel Cornelius",
+"dept": "Engineering",
+"place": "Sweden"
+},
+{
+"id": "bart-broeders",
+"name": "Bart Broeders",
+"dept": "Sales",
+"place": "Netherlands"
+},
+{
+"id": "ben-bauer",
+"name": "Ben Bauer",
+"dept": "Sales",
+"place": "Germany - Bavaria"
+},
+{
+"id": "bence-hezso",
+"name": "Bence Hezso",
+"dept": "Engineering",
+"place": "Austria"
+},
+{
+"id": "benito-barreiro-tieles",
+"name": "Benito Barreiro Tieles",
+"dept": "Engineering",
+"place": "Germany - Bavaria"
+},
+{
+"id": "boyan-vushkov",
+"name": "Boyan Vushkov",
+"dept": "Engineering",
+"place": null
+},
+{
+"id": "brock-dale",
+"name": "Brock Dale",
+"dept": "Sales",
+"place": "Spain - Catalonia"
+},
+{
+"id": "canan-coban",
+"name": "Canan Çoban",
+"dept": "People and Finance",
+"place": "Germany - Hamburg"
+},
+{
+"id": "cara-benecke",
+"name": "Cara Benecke",
+"dept": "Customer Success & Support",
+"place": "Spain - Andalusia"
+},
+{
+"id": "carlo-ciarnelli",
+"name": "Carlo Ciarnelli",
+"dept": "Engineering",
+"place": null
+},
+{
+"id": "carlo-lamatsch",
+"name": "Carlo Lamatsch",
+"dept": "Sales",
+"place": "Germany - Bavaria"
+},
+{
+"id": "cassius-lewis",
+"name": "Cassius Lewis",
+"dept": "Sales",
+"place": "United Kingdom"
+},
+{
+"id": "christina-graf",
+"name": "Christina Graf",
+"dept": "Sales",
+"place": "Germany - Baden-Württemberg"
+},
+{
+"id": "daniel-jekal",
+"name": "Daniel Jekal",
+"dept": "Customer Success & Support",
+"place": "Spain - Andalusia"
+},
+{
+"id": "daniel-rotarmel",
+"name": "Daniel Rotärmel",
+"dept": "Engineering",
+"place": "Germany - Hessen"
+},
+{
+"id": "david-george",
+"name": "David George",
+"dept": "Customer Success & Support",
+"place": "Egypt"
+},
+{
+"id": "david-sheedy",
+"name": "David Sheedy",
+"dept": "Sales",
+"place": null
+},
+{
+"id": "debora-prantl",
+"name": "Debora Prantl",
+"dept": "Sales",
+"place": "Germany - North Rhine-Westphalia"
+},
+{
+"id": "dilara-erikli",
+"name": "Dilara Erikli",
+"dept": "Customer Success & Support",
+"place": "Germany - Berlin"
+},
+{
+"id": "dorothee-schweigard",
+"name": "Dorothee Schweigard",
+"dept": "Compliance Research",
+"place": "Germany - Bavaria"
+},
+{
+"id": "duy-anh",
+"name": "Duy Anh",
+"dept": "Compliance Research",
+"place": "Germany - North Rhine-Westphalia"
+},
+{
+"id": "eman-mostafa",
+"name": "Eman Mostafa",
+"dept": "Engineering",
+"place": null
+},
+{
+"id": "emilie-nee",
+"name": "Emilie Nee",
+"dept": "People and Finance",
+"place": "Germany - Niedersachsen"
+},
+{
+"id": "eve-harrison",
+"name": "Eve Harrison",
+"dept": "Engineering",
+"place": "Germany - Berlin"
+},
+{
+"id": "fabio-somaglia",
+"name": "Fabio Somaglia",
+"dept": "Engineering",
+"place": "Netherlands"
+},
+{
+"id": "federico-calabro",
+"name": "Federico Calabrò",
+"dept": "Engineering",
+"place": "Italy"
+},
+{
+"id": "felix-frenz",
+"name": "Felix Frenz",
+"dept": "Sales",
+"place": "Germany - Baden-Württemberg"
+},
+{
+"id": "francesca-de-vittorio",
+"name": "Francesca De Vittorio",
+"dept": "Customer Success & Support",
+"place": "Germany - Baden-Württemberg"
+},
+{
+"id": "frank-jura",
+"name": "Frank Jura",
+"dept": "Compliance Research",
+"place": "Germany - Bavaria"
+},
+{
+"id": "gerard-rama",
+"name": "Gerard Rama",
+"dept": "Engineering",
+"place": "Albania"
+},
+{
+"id": "gonzalo-cortes",
+"name": "Gonzalo Cortes",
+"dept": "Compliance Research",
+"place": "Spain - Extremadura"
+},
+{
+"id": "gregor-chafisidis",
+"name": "Gregor Chafisidis",
+"dept": "Sales",
+"place": "Greece"
+},
+{
+"id": "halil-ulusoy",
+"name": "Halil Ulusoy",
+"dept": "Engineering",
+"place": "Germany - Baden-Württemberg"
+},
+{
+"id": "hanna-hennig",
+"name": "Hanna Hennig",
+"dept": "",
+"place": "Germany - Berlin"
+},
+{
+"id": "hassan-qassim",
+"name": "Hassan Qassim",
+"dept": null,
+"place": null
+},
+{
+"id": "hazem-emad",
+"name": "Hazem Emad",
+"dept": "Customer Success & Support",
+"place": "Egypt"
+},
+{
+"id": "ibrahim-talaat",
+"name": "Ibrahim Talaat",
+"dept": "Engineering",
+"place": "Egypt"
+},
+{
+"id": "iliana-papargyri",
+"name": "Iliana Papargyri",
+"dept": null,
+"place": null
+},
+{
+"id": "irina-galindo",
+"name": "Irina Galindo",
+"dept": "Customer Success & Support",
+"place": "Spain - Canary Islands"
+},
+{
+"id": "isabel-hilgendorf",
+"name": "Isabel Hilgendorf",
+"dept": "Sales",
+"place": "Germany - Berlin"
+},
+{
+"id": "ivan-matovic",
+"name": "Ivan Matovic",
+"dept": "Sales",
+"place": "Croatia"
+},
+{
+"id": "jacob-lim",
+"name": "Jacob Lim",
+"dept": "Engineering",
+"place": null
+},
+{
+"id": "janina-schmidt-zilic",
+"name": "Janina Schmidt-Žilič",
+"dept": null,
+"place": null
+},
+{
+"id": "jascha-ehleben",
+"name": "Jascha Ehleben",
+"dept": "Sales",
+"place": null
+},
+{
+"id": "jasin-shala",
+"name": "Jasin Shala",
+"dept": "Engineering",
+"place": "Kosovo"
+},
+{
+"id": "jasmin-laakmann",
+"name": "Jasmin Laakmann",
+"dept": "Sales",
+"place": "Portugal"
+},
+{
+"id": "jasmin-pachal",
+"name": "Jasmin Pachal",
+"dept": "Customer Success & Support",
+"place": "Germany - Hamburg"
+},
+{
+"id": "javier-rius-serrano",
+"name": "Javier Rius Serrano",
+"dept": "Engineering",
+"place": "Spain - Valenciana"
+},
+{
+"id": "jessica-schramm",
+"name": "Jessica Schramm",
+"dept": "Sales",
+"place": "Spain - Castilla-La Mancha"
+},
+{
+"id": "jessica-wolkenhauer",
+"name": "Jessica Wolkenhauer",
+"dept": "Sales",
+"place": "Germany - Niedersachsen"
+},
+{
+"id": "joelle-naas",
+"name": "Joelle Naas",
+"dept": "Marketing",
+"place": "Germany - Berlin"
+},
+{
+"id": "johnny-simula",
+"name": "Johnny Simula",
+"dept": "Sales",
+"place": "Spain - Andalusia"
+},
+{
+"id": "jonas-schult",
+"name": "Jonas Schult",
+"dept": "Sales",
+"place": "Germany - Baden-Württemberg"
+},
+{
+"id": "julia-ramsauer",
+"name": "Julia Ramsauer",
+"dept": "Marketing",
+"place": "Spain - Castilla-La Mancha"
+},
+{
+"id": "julia-wagner",
+"name": "Julia Wagner",
+"dept": "Visa Operations",
+"place": "Germany - North Rhine-Westphalia"
+},
+{
+"id": "julian-guttmann",
+"name": "Julian Guttmann",
+"dept": "Engineering",
+"place": "Poland"
+},
+{
+"id": "justus-bueckers",
+"name": "Justus Bueckers",
+"dept": "Sales",
+"place": "Germany - North Rhine-Westphalia"
+},
+{
+"id": "karim-ahmed",
+"name": "Karim Ahmed",
+"dept": "Engineering",
+"place": "Egypt"
+},
+{
+"id": "kholoud-abdelmonem",
+"name": "Kholoud Abdelmonem",
+"dept": "Visa Operations",
+"place": "Egypt"
+},
+{
+"id": "kiran-dhuppe",
+"name": "Kiran Dhuppe",
+"dept": "Product",
+"place": "Germany - Berlin"
+},
+{
+"id": "kody-melo",
+"name": "Kody Melo",
+"dept": "Product",
+"place": "Spain - Catalonia"
+},
+{
+"id": "lana-asatryan",
+"name": "Lana Asatryan",
+"dept": "Product",
+"place": "United Arab Emirates"
+},
+{
+"id": "laura-caetano",
+"name": "Laura Caetano",
+"dept": null,
+"place": null
+},
+{
+"id": "laura-gomez",
+"name": "Laura Gomez",
+"dept": "Sales",
+"place": "Switzerland"
+},
+{
+"id": "laura-rudow",
+"name": "Laura Rudow",
+"dept": "Sales",
+"place": "Norway"
+},
+{
+"id": "lea-stieglauer",
+"name": "Lea Stieglauer",
+"dept": "Compliance Research",
+"place": "Germany - Bavaria"
+},
+{
+"id": "leon-lamatsch",
+"name": "Leon Lamatsch",
+"dept": "Sales",
+"place": "Germany - Bavaria"
+},
+{
+"id": "lilit-ohanyan",
+"name": "Lilit Ohanyan",
+"dept": "Product",
+"place": "Armenia"
+},
+{
+"id": "lina-pickhardt",
+"name": "Lina Pickhardt",
+"dept": "Product",
+"place": "Germany - North Rhine-Westphalia"
+},
+{
+"id": "linda-bernau",
+"name": "Linda Bernau",
+"dept": "Compliance Research",
+"place": "Germany - Berlin"
+},
+{
+"id": "lisa-marie-angermeier",
+"name": "Lisa-Marie Angermeier",
+"dept": "Customer Success & Support",
+"place": "Spain - Balearic Islands"
+},
+{
+"id": "liva-bileskalne",
+"name": "Liva Bileskalne",
+"dept": "Marketing",
+"place": "Latvia"
+},
+{
+"id": "lucas-mancan",
+"name": "Lucas Mançan",
+"dept": "Engineering",
+"place": "Brazil"
+},
+{
+"id": "lucas-neumann",
+"name": "Lucas Neumann",
+"dept": "Sales",
+"place": "Germany - Bavaria"
+},
+{
+"id": "lucie-gall",
+"name": "Lucie Gall",
+"dept": "Compliance Research",
+"place": "Germany - Berlin"
+},
+{
+"id": "lucy-dreger",
+"name": "Lucy Dreger",
+"dept": "Visa Operations",
+"place": "Portugal"
+},
+{
+"id": "luisa-kriegel",
+"name": "Luisa Kriegel",
+"dept": "Customer Success & Support",
+"place": "Sweden"
+},
+{
+"id": "lukas-killich",
+"name": "Lukas Killich",
+"dept": "Sales",
+"place": null
+},
+{
+"id": "lukas-mader",
+"name": "Lukas Mader",
+"dept": "Product",
+"place": "Portugal"
+},
+{
+"id": "malak-mounir",
+"name": "Malak Mounir",
+"dept": "Compliance Operations",
+"place": "Egypt"
+},
+{
+"id": "manav-kochhar",
+"name": "Manav Kochhar",
+"dept": "People and Finance",
+"place": "Spain - Catalonia"
+},
+{
+"id": "mans-hall",
+"name": "Måns Hall",
+"dept": "Sales",
+"place": "Sweden"
+},
+{
+"id": "marawan-elkadi",
+"name": "Marawan Elkadi",
+"dept": "Compliance Operations",
+"place": "Egypt"
+},
+{
+"id": "marcell-szikora",
+"name": "Marcell Szikora",
+"dept": "Engineering",
+"place": "Hungary"
+},
+{
+"id": "maren-breier",
+"name": "Maren Breier",
+"dept": "Sales",
+"place": "Germany - Niedersachsen"
+},
+{
+"id": "marie-kubald",
+"name": "Marie Kubald",
+"dept": "Marketing",
+"place": "Germany - Berlin"
+},
+{
+"id": "marija-belojica",
+"name": "Marija Belojica",
+"dept": "Visa Operations",
+"place": "Serbia"
+},
+{
+"id": "marius-gapp",
+"name": "Marius Gapp",
+"dept": "Sales",
+"place": "Portugal"
+},
+{
+"id": "mark-baumgarten-jacinto",
+"name": "Mark Baumgarten Jacinto",
+"dept": "Sales",
+"place": null
+},
+{
+"id": "markus-glasl",
+"name": "Markus Glasl",
+"dept": "Engineering",
+"place": "Germany - Bavaria"
+},
+{
+"id": "martina-menghi",
+"name": "Martina Menghi",
+"dept": "Compliance Research",
+"place": "Italy"
+},
+{
+"id": "matteo-toteda",
+"name": "Matteo Toteda",
+"dept": "Engineering",
+"place": "Italy"
+},
+{
+"id": "maudini-virtriana",
+"name": "Maudini Virtriana",
+"dept": "Visa Operations",
+"place": "Germany - Berlin"
+},
+{
+"id": "max-goulnik",
+"name": "Max Goulnik",
+"dept": "Product",
+"place": "Germany - North Rhine-Westphalia"
+},
+{
+"id": "maximilian-frowein",
+"name": "Maximilian Frowein",
+"dept": "",
+"place": "Germany - North Rhine-Westphalia"
+},
+{
+"id": "maximilian-myszkowski",
+"name": "Maximilian Myszkowski",
+"dept": "Sales",
+"place": "Spain - Catalonia"
+},
+{
+"id": "micaela-gonzalez",
+"name": "Micaela Gonzalez",
+"dept": "Product",
+"place": "Spain - Valenciana"
+},
+{
+"id": "mika-bouten",
+"name": "Mika Bouten",
+"dept": "Sales",
+"place": "Portugal"
+},
+{
+"id": "moaaz-samy-ali",
+"name": "Moaaz Samy Ali",
+"dept": "Compliance Operations",
+"place": "Egypt"
+},
+{
+"id": "mohamed-elbahrawy",
+"name": "Mohamed ElBahrawy",
+"dept": "Engineering",
+"place": null
+},
+{
+"id": "mohammad-hashimi",
+"name": "Mohammad Hashimi",
+"dept": "Engineering",
+"place": "Germany - Berlin"
+},
+{
+"id": "mohanad-magdy",
+"name": "Mohanad Magdy",
+"dept": "Engineering",
+"place": "Egypt"
+},
+{
+"id": "monika-gorka",
+"name": "Monika Górka",
+"dept": "Compliance Research",
+"place": "Germany - Saxony-Anhalt"
+},
+{
+"id": "mostafa-elkadi",
+"name": "Mostafa Elkadi",
+"dept": "Compliance Operations",
+"place": "Egypt"
+},
+{
+"id": "nada-fawzy",
+"name": "Nada Fawzy",
+"dept": "Compliance Operations",
+"place": "Egypt"
+},
+{
+"id": "nancy-alarabawy",
+"name": "Nancy Alarabawy",
+"dept": "Engineering",
+"place": "Egypt"
+},
+{
+"id": "nathalie-eder",
+"name": "Nathalie Eder",
+"dept": "Sales",
+"place": null
+},
+{
+"id": "nathan-clarke",
+"name": "Nathan Clarke",
+"dept": "Sales",
+"place": "United Kingdom"
+},
+{
+"id": "nayl-alam",
+"name": "Nayl Alam",
+"dept": "Sales",
+"place": "United Kingdom"
+},
+{
+"id": "niels-de-winter",
+"name": "Niels De Winter",
+"dept": "People and Finance",
+"place": "Netherlands"
+},
+{
+"id": "nikoleta-koupa",
+"name": "Nikoleta Koupa",
+"dept": "Product",
+"place": "Greece"
+},
+{
+"id": "nina-geiger",
+"name": "Nina Geiger",
+"dept": "Compliance Research",
+"place": "Germany - Baden-Württemberg"
+},
+{
+"id": "nour-ashraf",
+"name": "Nour Ashraf",
+"dept": "Engineering",
+"place": "Germany - North Rhine-Westphalia"
+},
+{
+"id": "nour-dawood",
+"name": "Nour Dawood",
+"dept": "Compliance Operations",
+"place": "Egypt"
+},
+{
+"id": "nour-eldin-gouda",
+"name": "Nour Eldin Gouda",
+"dept": "Compliance Research",
+"place": "Egypt"
+},
+{
+"id": "nourhan-abdelkareem",
+"name": "Nourhan Abdelkareem",
+"dept": null,
+"place": null
+},
+{
+"id": "obaidah-mouawad",
+"name": "Obaidah Mouawad",
+"dept": "Compliance Research",
+"place": "Egypt"
+},
+{
+"id": "olivia-nader",
+"name": "Olivia Nader",
+"dept": "Compliance Operations",
+"place": "Egypt"
+},
+{
+"id": "omar-el-khayal",
+"name": "Omar El-Khayal",
+"dept": "Product",
+"place": "Egypt"
+},
+{
+"id": "omar-zaky",
+"name": "Omar Zaky",
+"dept": "Engineering",
+"place": "Egypt"
+},
+{
+"id": "oscar-lacambra",
+"name": "Oscar Lacambra",
+"dept": "Engineering",
+"place": "Spain - Catalonia"
+},
+{
+"id": "pablo-betancor",
+"name": "Pablo Betancor",
+"dept": "Product",
+"place": null
+},
+{
+"id": "patrick-koch",
+"name": "Patrick Koch",
+"dept": "Co-founder",
+"place": "Netherlands"
+},
+{
+"id": "philipp-harder",
+"name": "Philipp Harder",
+"dept": "Sales",
+"place": "Germany - Hamburg"
+},
+{
+"id": "pieter-manden",
+"name": "Pieter Manden",
+"dept": "Co-founder",
+"place": "Netherlands"
+},
+{
+"id": "pietro-schneegass",
+"name": "Pietro Schneegass",
+"dept": "Sales",
+"place": "Spain - Valenciana"
+},
+{
+"id": "quinten-lookamp",
+"name": "Quinten Lookamp",
+"dept": "Sales",
+"place": "Portugal"
+},
+{
+"id": "rachel-giglio-peterson",
+"name": "Rachel Giglio Peterson",
+"dept": "Product",
+"place": "Netherlands"
+},
+{
+"id": "rafiullah-momand",
+"name": "Rafiullah Momand",
+"dept": "Engineering",
+"place": "Germany - Berlin"
+},
+{
+"id": "rahul-yadav",
+"name": "Rahul Yadav",
+"dept": "Engineering",
+"place": "Ireland"
+},
+{
+"id": "rexhino-balla",
+"name": "Rexhino Balla",
+"dept": "Engineering",
+"place": null
+},
+{
+"id": "robin-ellis",
+"name": "Robin Ellis",
+"dept": "Engineering",
+"place": "Cambodia"
+},
+{
+"id": "ruben-da-rosa",
+"name": "Ruben Da Rosa",
+"dept": "Sales",
+"place": "Germany - Berlin"
+},
+{
+"id": "salma-sadek",
+"name": "Salma Sadek",
+"dept": "Product",
+"place": "Egypt"
+},
+{
+"id": "sandra-obradovic",
+"name": "Sandra Obradovic",
+"dept": "Marketing",
+"place": "Germany - Sachsen"
+},
+{
+"id": "sandra-winkler",
+"name": "Sandra Winkler",
+"dept": "Marketing",
+"place": "Germany - Brandenburg"
+},
+{
+"id": "sandro-gunaltay",
+"name": "Sandro Günaltay",
+"dept": "Sales",
+"place": "Germany - Berlin"
+},
+{
+"id": "sarah-magdy",
+"name": "Sarah Magdy",
+"dept": "Compliance Operations",
+"place": "Egypt"
+},
+{
+"id": "sarah-shaheen",
+"name": "Sarah Shaheen",
+"dept": "Visa Operations",
+"place": "Egypt"
+},
+{
+"id": "sasa-savic",
+"name": "Sasa Savic",
+"dept": "Engineering",
+"place": "Serbia"
+},
+{
+"id": "selina-militzer",
+"name": "Selina Militzer",
+"dept": "Customer Success & Support",
+"place": "Spain - Catalonia"
+},
+{
+"id": "senka-muslibegovic",
+"name": "Senka Muslibegovic",
+"dept": "People and Finance",
+"place": "Spain - Andalusia"
+},
+{
+"id": "seryozha-hovhannisyan",
+"name": "Seryozha Hovhannisyan",
+"dept": "Engineering",
+"place": "Spain - Valenciana"
+},
+{
+"id": "shehab-el-saghier",
+"name": "Shehab El-Saghier",
+"dept": "Engineering",
+"place": "Egypt"
+},
+{
+"id": "shimaa-emam",
+"name": "Shimaa Emam",
+"dept": "People and Finance",
+"place": "Egypt"
+},
+{
+"id": "shree-dash",
+"name": "Shree Dash",
+"dept": "Marketing",
+"place": "Germany - Berlin"
+},
+{
+"id": "sid-torres",
+"name": "Sid Torres",
+"dept": "Product",
+"place": "Spain - Madrid"
+},
+{
+"id": "sofia-eichholt",
+"name": "Sofia Eichholt",
+"dept": "Sales",
+"place": "Germany - North Rhine-Westphalia"
+},
+{
+"id": "stefan-milosavljevic",
+"name": "Stefan Milosavljevic",
+"dept": "Sales",
+"place": "Germany - Baden-Württemberg"
+},
+{
+"id": "steffen-jacobs",
+"name": "Steffen Jacobs",
+"dept": "Engineering",
+"place": "Germany - Hessen"
+},
+{
+"id": "suba-kanchana",
+"name": "Suba Kanchana",
+"dept": "Product",
+"place": "Germany - Hamburg"
+},
+{
+"id": "tarek-hussien",
+"name": "Tarek Hussien",
+"dept": "Engineering",
+"place": "Bahrain"
+},
+{
+"id": "tarik-terzic",
+"name": "Tarik Terzic",
+"dept": "Engineering",
+"place": "Bosnia"
+},
+{
+"id": "tillmann-horn",
+"name": "Tillmann Horn",
+"dept": "Sales",
+"place": "Portugal"
+},
+{
+"id": "timur-kadam",
+"name": "Timur Kadam",
+"dept": "Sales",
+"place": null
+},
+{
+"id": "tobias-butzhammer",
+"name": "Tobias Butzhammer",
+"dept": "Sales",
+"place": "Germany - Bavaria"
+},
+{
+"id": "tom-crosby",
+"name": "Tom Crosby",
+"dept": "Sales",
+"place": "United Kingdom"
+},
+{
+"id": "truong-vu",
+"name": "Truong Vu",
+"dept": "Customer Success & Support",
+"place": "Germany - Berlin"
+},
+{
+"id": "vanessa-lopez",
+"name": "Vanessa Lopez",
+"dept": "Compliance Research",
+"place": "Germany - Bavaria"
+},
+{
+"id": "venice-bilardi",
+"name": "Venice Bilardi",
+"dept": "Sales",
+"place": null
+},
+{
+"id": "viktor-lesyk",
+"name": "Viktor Lesyk",
+"dept": "Compliance Research",
+"place": null
+},
+{
+"id": "vishwas-anavatti",
+"name": "Vishwas Anavatti",
+"dept": "Engineering",
+"place": null
+},
+{
+"id": "wouter-alblas",
+"name": "Wouter Alblas",
+"dept": "People and Finance",
+"place": "Netherlands"
+},
+{
+"id": "xheni-krasniqi",
+"name": "Xheni Krasniqi",
+"dept": "Visa Operations",
+"place": "Germany - Berlin"
+},
+{
+"id": "yasmin-elsamak",
+"name": "Yasmin Elsamak",
+"dept": "Product",
+"place": "Germany - Berlin"
+},
+{
+"id": "yelena-wagner",
+"name": "Yelena Wagner",
+"dept": "Visa Operations",
+"place": "Germany - Rheiland-Pfalz"
+},
+{
+"id": "youans-ezzat",
+"name": "Youans Ezzat",
+"dept": "Engineering",
+"place": null
+},
+{
+"id": "zain-shakir",
+"name": "Zain Shakir",
+"dept": "Engineering",
+"place": "Pakistan"
+}
+]

@@ -1,0 +1,178 @@
+[
+ {
+  "id": "r01",
+  "people": [
+   "anna-luisa-grebe"
+  ],
+  "baby": "anna-luisa-grebe-baby.jpg",
+  "now": [
+   null
+  ]
+ },
+ {
+  "id": "r02",
+  "people": [
+   "suba-kanchana"
+  ],
+  "baby": "suba-kanchana-baby.jpg",
+  "now": [
+   null
+  ]
+ },
+ {
+  "id": "r03",
+  "people": [
+   "amr-khaled"
+  ],
+  "baby": "amr-khaled-baby.jpg",
+  "now": [
+   "amr-khaled-now.jpg"
+  ],
+  "hint": "The one on the left"
+ },
+ {
+  "id": "r04",
+  "people": [
+   "dorothee-schweigard"
+  ],
+  "baby": "dorothee-schweigard-baby.jpg",
+  "now": [
+   "dorothee-schweigard-now.jpg"
+  ]
+ },
+ {
+  "id": "r05",
+  "people": [
+   "abdullah-magdi"
+  ],
+  "baby": "abdullah-magdi-baby.jpg",
+  "now": [
+   null
+  ]
+ },
+ {
+  "id": "r06",
+  "people": [
+   "patrick-koch"
+  ],
+  "baby": "patrick-koch-baby.jpg",
+  "now": [
+   null
+  ]
+ },
+ {
+  "id": "r07",
+  "people": [
+   "pieter-manden"
+  ],
+  "baby": "pieter-manden-baby.jpg",
+  "now": [
+   null
+  ],
+  "hint": "The twin on the right"
+ },
+ {
+  "id": "r08",
+  "people": [
+   "brock-dale"
+  ],
+  "baby": "brock-dale-baby.jpg",
+  "now": [
+   null
+  ]
+ },
+ {
+  "id": "r09",
+  "people": [
+   "wouter-alblas"
+  ],
+  "baby": "wouter-alblas-baby.jpg",
+  "now": [
+   null
+  ],
+  "hint": "The baby being held"
+ },
+ {
+  "id": "r10",
+  "people": [
+   "cara-benecke"
+  ],
+  "baby": "cara-benecke-baby.jpg",
+  "now": [
+   "cara-benecke-now.jpg"
+  ]
+ },
+ {
+  "id": "r11",
+  "people": [
+   "luisa-kriegel"
+  ],
+  "baby": "luisa-kriegel-baby.jpg",
+  "now": [
+   "luisa-kriegel-now.jpg"
+  ]
+ },
+ {
+  "id": "r12",
+  "people": [
+   "sarah-shaheen"
+  ],
+  "baby": "sarah-shaheen-baby.jpg",
+  "now": [
+   null
+  ]
+ },
+ {
+  "id": "r13",
+  "people": [
+   "ben-bauer"
+  ],
+  "baby": "ben-bauer-baby.jpg",
+  "now": [
+   null
+  ]
+ },
+ {
+  "id": "r14",
+  "people": [
+   "obaidah-mouawad"
+  ],
+  "baby": "obaidah-mouawad-baby.jpg",
+  "now": [
+   "obaidah-mouawad-now.jpg"
+  ]
+ },
+ {
+  "id": "r15",
+  "people": [
+   "sarah-magdy"
+  ],
+  "baby": "sarah-magdy-baby.jpg",
+  "now": [
+   "sarah-magdy-now.jpg"
+  ]
+ },
+ {
+  "id": "r16",
+  "people": [
+   "lilit-ohanyan"
+  ],
+  "baby": "lilit-ohanyan-baby.jpg",
+  "now": [
+   null
+  ]
+ },
+ {
+  "id": "r17",
+  "people": [
+   "carlo-lamatsch",
+   "leon-lamatsch"
+  ],
+  "baby": "carlo-and-leon-lamatsch-baby.jpg",
+  "hint": "Two brothers. Name both.",
+  "now": [
+   "carlo-lamatsch-now.jpg",
+   null
+  ]
+ }
+]
