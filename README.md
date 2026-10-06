@@ -13,7 +13,7 @@ A 15-minute team game for a company event: a colleague's baby photo goes up on t
 
 Flow: **Lobby** (QR + teams joining) → press **Start** → each photo: 20 s timer, captains lock in → **Reveal** (scores) → **Next** … → **Finish** (podium).
 
-Auto-play is on by default: the photo is revealed when the timer ends (or as soon as every team has locked in), and the next photo follows after 3 seconds (adjustable on the host page; untick Auto-play to drive it by hand).
+**Simplest way to run it:** open only `#screen` on the laptop connected to the projector. It becomes the host device, shows a **Start the game** button once a team has joined, and from then on runs by itself: 20 s per photo → reveal (earlier if every team has locked in) → next photo after 3 s → … → podium. Space = start / reveal now / next; F = full screen. The `#host` page is optional (overrides, restart, settings).
 
 Rules built in:
 - 10 points for a correct guess (the brothers round: 5 per correct name).

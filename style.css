@@ -221,3 +221,8 @@ body.timeup .timeup-msg { display: block; }
 .muted.inline { margin-left: .6rem; }
 .revealbar { height: 6px; background: rgba(255,255,255,.12); border-radius: 3px; overflow: hidden; margin-top: 1.2rem; }
 .revealbar i { display: block; height: 100%; background: var(--marigold); transform-origin: left; transform: scaleX(1); }
+
+.scr-host { position: fixed; right: 2vw; bottom: 2vh; display: flex; flex-direction: column; align-items: flex-end; gap: .4rem; text-align: right; }
+.scr-host .btn.primary { background: var(--marigold); color: var(--felt-deep); border-color: var(--marigold); }
+.scr-host small { color: rgba(251,247,238,.55); font-size: .85rem; max-width: 34ch; }
+.scr-host.quiet .btn.ghost { color: rgba(251,247,238,.6); border-color: rgba(251,247,238,.25); }

@@ -32,7 +32,7 @@
     const h = location.hash.replace("#", "").split("=")[0];
     App.role = ["screen", "host", "watch"].includes(h) ? h : "captain";
     document.body.dataset.role = App.role;
-    const [roster, rounds] = await Promise.all([fetch("roster.json").then((r) => r.json()), fetch("rounds.json").then((r) => r.json())]);
+    const [roster, rounds] = await Promise.all([fetch("roster.json", { cache: "no-cache" }).then((r) => r.json()), fetch("rounds.json", { cache: "no-cache" }).then((r) => r.json())]);
     App.roster = roster.sort((a, b) => a.name.localeCompare(b.name));
     App.rounds = rounds;
     for (const p of roster) App.byId[p.id] = p;
@@ -45,12 +45,14 @@
     b.on("game", (v) => { App.s.game = v; syncAnswerSub(); render(); });
     b.on("teams", (v) => { App.s.teams = v || {}; render(); });
     b.on("results", (v) => { App.s.results = v || {}; render(); });
-    b.on("config/hostUid", (v) => { App.s.hostUid = v; if (App.role === "host") claimHostIfFree(v); render(); });
+    b.on("config/hostUid", (v) => { App.s.hostUid = v; if (App.role === "host" || App.role === "screen") claimHostIfFree(v); render(); });
     document.addEventListener("click", onClick);
     document.addEventListener("input", onInput);
     document.addEventListener("submit", (e) => { e.preventDefault(); const f = e.target.dataset.action; if (f) act(f, e.target); });
     window.addEventListener("hashchange", () => location.reload());
+    document.addEventListener("keydown", onKey);
     startTimerLoop();
+    setInterval(() => { const g = game(); autoPlayTick(g, g.phase + ":" + g.roundIdx + ":" + g.startedAt); }, 500);
   }
 
   function syncAnswerSub() {
@@ -195,6 +197,12 @@
     act(el.dataset.action, el);
   }
   document.addEventListener("change", (e) => { const el = e.target; if (el.dataset.on === "change" && el.dataset.action) act(el.dataset.action, el); });
+  function onKey(e) {
+    if (App.role !== "screen" || !isHost()) return;
+    if (e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    if (e.key === " " || e.key === "Enter") { e.preventDefault(); const ph = phase(); if (ph === "lobby") act("start"); else if (ph === "round") act("reveal"); else if (ph === "reveal") act("next"); }
+    if (e.key === "f" || e.key === "F") act("fullscreen");
+  }
   function onInput(e) {
     const el = e.target; const k = el.dataset.bind; if (!k) return;
     if (k === "search") { App.ui.search = el.value; renderListOnly(); }
@@ -208,7 +216,7 @@
   const auto = () => Object.assign({ on: true, revealSec: AUTO_REVEAL_SEC, early: true }, game().auto || {});
   let autoRevealKey = "", autoNextKey = "";
   function autoPlayTick(g, key) {
-    if (App.role !== "host" || !isHost()) return;
+    if ((App.role !== "host" && App.role !== "screen") || !isHost()) return;
     const a = auto(); if (!a.on) return;
     if (g.phase === "round" && g.startedAt) {
       const c = currentRound() ? answeredCount(currentRound()) : null;
@@ -405,7 +413,8 @@
       <div class="lobby-l"><h1 class="display title">${esc(TITLE)}</h1><p class="lead">Captains: scan to make your team</p><div id="qr" class="qr"></div><p class="url">${esc(joinUrl().replace(/^https?:\/\//, ""))}</p></div>
       <div class="lobby-r"><h2>Teams <span class="count">${ts.length}</span></h2>
         ${ts.length ? `<ul class="teamlist">${ts.map((t) => { const n = memberIds(t).length, p = memberIds(t).filter((id) => pic.has(id)).length; return `<li>${avatar(t, "lg")}<b>${esc(t.name)}</b><small>${n} ${n === 1 ? "person" : "people"}${p ? ` · ${p} in the photos` : ""}</small></li>`; }).join("")}</ul>` : `<p class="muted">No teams yet. Scan the code to be the first.</p>`}
-      </div></div>`;
+      </div></div>
+      ${isHost() ? `<div class="scr-host"><button class="btn primary big" data-action="start" ${ts.length ? "" : "disabled"}>Start the game</button><small>Then it runs by itself: ${CFG.roundSeconds || 20} s per photo, reveal, next. Space = start / reveal / next · F = full screen</small></div>` : ""}`;
   }
   function scrRound() {
     const g = game(), round = currentRound(); const c = answeredCount(round);
@@ -435,6 +444,7 @@
     return `<div class="final"><h1 class="display title">And the winners are…</h1>
       <div class="podium">${slot(top[1], "second")}${slot(top[0], "first")}${slot(top[2], "third")}</div>
       ${rest.length ? `<ol class="standings wide">${rest.map((s) => `<li><span class="rank">${s.rank}</span>${avatar(s)}<span class="n">${esc(s.name)}</span><span class="pts">${s.points}</span></li>`).join("")}</ol>` : ""}
+      ${isHost() ? `<div class="scr-host quiet"><button class="btn ghost" data-action="to-lobby">Back to lobby</button></div>` : ""}
     </div>`;
   }
 
