@@ -1,12 +1,22 @@
 [
  {
-  "id": "r01",
+  "id": "r04",
   "people": [
-   "anna-luisa-grebe"
+   "dorothee-schweigard"
   ],
-  "baby": "anna-luisa-grebe-baby.jpg",
+  "baby": "dorothee-schweigard-baby.jpg",
   "now": [
-   "anna-luisa-grebe-now.jpg"
+   "dorothee-schweigard-now.jpg"
+  ]
+ },
+ {
+  "id": "r08",
+  "people": [
+   "brock-dale"
+  ],
+  "baby": "brock-dale-baby.jpg",
+  "now": [
+   "brock-dale-now.png"
   ]
  },
  {
@@ -20,24 +30,43 @@
   ]
  },
  {
-  "id": "r03",
+  "id": "r06",
   "people": [
-   "amr-khaled"
+   "patrick-koch"
   ],
-  "baby": "amr-khaled-baby.jpg",
+  "baby": "patrick-koch-baby.jpg",
   "now": [
-   "amr-khaled-now.jpg"
-  ],
-  "hint": "The one on the left"
+   "patrick-koch-now.jpg"
+  ]
  },
  {
-  "id": "r04",
+  "id": "r15",
   "people": [
-   "dorothee-schweigard"
+   "sarah-magdy"
   ],
-  "baby": "dorothee-schweigard-baby.jpg",
+  "baby": "sarah-magdy-baby.jpg",
   "now": [
-   "dorothee-schweigard-now.jpg"
+   "sarah-magdy-now.jpg"
+  ]
+ },
+ {
+  "id": "r13",
+  "people": [
+   "ben-bauer"
+  ],
+  "baby": "ben-bauer-baby.jpg",
+  "now": [
+   "ben-bauer-now.jpg"
+  ]
+ },
+ {
+  "id": "r16",
+  "people": [
+   "lilit-ohanyan"
+  ],
+  "baby": "lilit-ohanyan-baby.jpg",
+  "now": [
+   "lilit-ohanyan-now.jpg"
   ]
  },
  {
@@ -51,13 +80,13 @@
   ]
  },
  {
-  "id": "r06",
+  "id": "r01",
   "people": [
-   "patrick-koch"
+   "anna-luisa-grebe"
   ],
-  "baby": "patrick-koch-baby.jpg",
+  "baby": "anna-luisa-grebe-baby.jpg",
   "now": [
-   "patrick-koch-now.jpg"
+   "anna-luisa-grebe-now.jpg"
   ]
  },
  {
@@ -72,13 +101,64 @@
   "hint": "The twin on the right"
  },
  {
-  "id": "r08",
+  "id": "r12",
   "people": [
-   "brock-dale"
+   "sarah-shaheen"
   ],
-  "baby": "brock-dale-baby.jpg",
+  "baby": "sarah-shaheen-baby.jpg",
   "now": [
-   "brock-dale-now.png"
+   "sarah-shaheen-now.jpg"
+  ]
+ },
+ {
+  "id": "r03",
+  "people": [
+   "amr-khaled"
+  ],
+  "baby": "amr-khaled-baby.jpg",
+  "now": [
+   "amr-khaled-now.jpg"
+  ],
+  "hint": "The one on the left"
+ },
+ {
+  "id": "r11",
+  "people": [
+   "luisa-kriegel"
+  ],
+  "baby": "luisa-kriegel-baby.jpg",
+  "now": [
+   "luisa-kriegel-now.jpg"
+  ]
+ },
+ {
+  "id": "r14",
+  "people": [
+   "obaidah-mouawad"
+  ],
+  "baby": "obaidah-mouawad-baby.jpg",
+  "now": [
+   "obaidah-mouawad-now.jpg"
+  ]
+ },
+ {
+  "id": "r10",
+  "people": [
+   "cara-benecke"
+  ],
+  "baby": "cara-benecke-baby.jpg",
+  "now": [
+   "cara-benecke-now.jpg"
+  ]
+ },
+ {
+  "id": "r18",
+  "people": [
+   "abdelrahman-fouda"
+  ],
+  "baby": "abdelrahman-fouda-baby.jpg",
+  "now": [
+   "abdelrahman-fouda-now.png"
   ]
  },
  {
@@ -93,93 +173,13 @@
   "hint": "The baby being held"
  },
  {
-  "id": "r10",
-  "people": [
-   "cara-benecke"
-  ],
-  "baby": "cara-benecke-baby.jpg",
-  "now": [
-   "cara-benecke-now.jpg"
-  ]
- },
- {
-  "id": "r11",
-  "people": [
-   "luisa-kriegel"
-  ],
-  "baby": "luisa-kriegel-baby.jpg",
-  "now": [
-   "luisa-kriegel-now.jpg"
-  ]
- },
- {
-  "id": "r12",
-  "people": [
-   "sarah-shaheen"
-  ],
-  "baby": "sarah-shaheen-baby.jpg",
-  "now": [
-   "sarah-shaheen-now.jpg"
-  ]
- },
- {
-  "id": "r13",
-  "people": [
-   "ben-bauer"
-  ],
-  "baby": "ben-bauer-baby.jpg",
-  "now": [
-   "ben-bauer-now.jpg"
-  ]
- },
- {
-  "id": "r14",
-  "people": [
-   "obaidah-mouawad"
-  ],
-  "baby": "obaidah-mouawad-baby.jpg",
-  "now": [
-   "obaidah-mouawad-now.jpg"
-  ]
- },
- {
-  "id": "r15",
-  "people": [
-   "sarah-magdy"
-  ],
-  "baby": "sarah-magdy-baby.jpg",
-  "now": [
-   "sarah-magdy-now.jpg"
-  ]
- },
- {
-  "id": "r16",
-  "people": [
-   "lilit-ohanyan"
-  ],
-  "baby": "lilit-ohanyan-baby.jpg",
-  "now": [
-   "lilit-ohanyan-now.jpg"
-  ]
- },
- {
-  "id": "r18",
-  "people": [
-   "abdelrahman-fouda"
-  ],
-  "baby": "abdelrahman-fouda-baby.jpg",
-  "now": [
-   "abdelrahman-fouda-now.png"
-  ]
- },
- {
   "id": "r17",
   "people": [
    "carlo-lamatsch",
    "leon-lamatsch"
   ],
   "baby": "carlo-and-leon-lamatsch-baby.jpg",
-  "hint": "Two brothers. Name both.",
+  "hint": "Two brothers! Please choose two colleagues.",
   "now": [
    "carlo-lamatsch-now.jpg",
    "leon-lamatsch-now.png"
