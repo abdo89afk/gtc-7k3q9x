@@ -11,9 +11,9 @@ A 15-minute team game for a company event: a colleague's baby photo goes up on t
 | Captains | scan the QR → `<site>/` | Create a team, pick members, answer each round |
 | Everyone else | `<site>/#watch` | Follow along on their phone (read-only) |
 
-Flow: **Lobby** (QR + teams joining) → press **Start** → each photo: 20 s timer, captains lock in → **Reveal** (scores) → **Next** … → **Finish** (podium).
+Flow: **Lobby** (QR + teams joining) → press **Start** → each photo: 30 s timer, captains lock in → **Reveal** (scores) → **Next** … → **Finish** (podium).
 
-**Simplest way to run it:** open only `#screen` on the laptop connected to the projector. It becomes the host device, shows a **Start the game** button once a team has joined, and from then on runs by itself: 20 s per photo → reveal (earlier if every team has locked in) → next photo after 3 s → … → podium. Space = start / reveal now / next; F = full screen. The `#host` page is optional (overrides, restart, settings).
+**Simplest way to run it:** open only `#screen` on the laptop connected to the projector. It becomes the host device, shows a **Start the game** button once a team has joined, and from then on runs by itself: 30 s per photo → reveal (earlier if every team has locked in) → next photo after 7 s → … → podium. Space = start / reveal now / next; F = full screen. The `#host` page is optional (overrides, restart, settings).
 
 Rules built in:
 - 10 points for a correct guess (the brothers round: 5 per correct name).
